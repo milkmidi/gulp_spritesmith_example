@@ -1,0 +1,2 @@
+# gulp_spritesmith_example
+gulp_spritesmith_example
