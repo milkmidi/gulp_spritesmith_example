@@ -8,8 +8,8 @@ const buffer = require('vinyl-buffer');
 function createSprite(src, fileName, cssTemplate, externalClassName = 'sprite') {
   const spriteData = gulp.src(src)
     .pipe(spritesmith({
-      imgName: `${fileName.split('.')[0]}.png`,
-      cssName: `${fileName}`,
+      imgName: `${fileName}.png`,
+      cssName: `${fileName}.css`,
       padding: 4,
       imgOpts: {
         quality: 100,
@@ -49,7 +49,7 @@ gulp.task('sprite', () => {
   const basicTemplate = 'src/css/handlebars/autosize.hbs';
 
   const a = [
-    createSprite('src/assets/sprite_src/*', 'sprite.css', basicTemplate),
+    createSprite('src/assets/sprite_src/*', 'sprite', basicTemplate),
   ];
   return merge(...a);
 });
